@@ -1,0 +1,13 @@
+> bikin table bendahara untuk menyimpan total pemasukan dana dari donatur, misal ada 5 donatur memberikan dana maka total dari 5 donatur tersebut masuk ke dalam table bendahara, jadi isi dari table bendahara hanya berisikan total dana
+
+> setiap terjadi pemasukan data atau barang ke dalam table inventaris maka dana yang ada di table bendahara berkurang sesuai jumlah harga yang ada di data yang baru dimasukan
+
+jadi ada 6 function 
+1. function untuk mengupdata data yang ada di table pemulangan setelah mengisi table peminjaman
+2. function untuk mentriger data yang ditambahkan dari table peminjaman ke table status
+3. function untuk mentriger table status dan table inventaris setalah mengupdate data pemulangan
+4. function untuk mentriger table inventaris setelah mengisi table peminjaman
+5. function untuk menghitung total dana yang di berikan oleh donatur
+6. function untuk mengubah jumlah dana yang ada pada table bendahara setelah menambahkan barang yang baru dibeli ke dalam table inventari
+
+untuk function ke-6 kita bisa membuat table baru lalu di relasikan ke table inventaris... untuk mencata harga dari inventaris yang baru dibeli

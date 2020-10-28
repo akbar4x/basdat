@@ -1,0 +1,20 @@
+create table inventaris( id serial primary key, nama varchar(45), jumlah int, status varchar(45));
+
+create table dkm (id serial primary key, nama varchar(45), tgl_lahir date, alamat varchar(45), inventaris_id int references inventaris(id));
+
+create table pengurus (jabatan varchar(45), gaji double precision) inherits(dkm);
+
+create table donatur (pekerjaan varchar(45), jumlah_donasi double precision) inherits(dkm);
+
+create table status(id serial primary key, nama_barang varchar(45), waktu_peminjaman varchar(45), sisa_waktu varchar(45), waktu_pengembalian varchar(45));
+
+create table peminjaman(id serial primary key, nama_peminjam varchar(45), nama_barang varchar(45), jumlah_peminjaman int, tanggal_pengambilan date, status_id int references status(id));
+
+create table pemulangan(id serial primary key, nama_peminjam varchar(45), nama_barang varchar(45), jumlah_peminjaman int, tanggal_pengembalian date, status_id int references status(id));
+
+create table pinjam (id serial primary key, inventaris_id int references inventaris(id), dkm_id int references dkm(id), peminjaman_id int references peminjaman(id), pemulangan_id int references pemulangan(id));
+
+create table bendahara(id serial primary key, total double precision);
+
+create table belanja(id serial primary key, nama varchar(45), harga double precision);
+
